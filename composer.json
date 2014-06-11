@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Geodata": "/geodata/doctrineplugin"
+            "Geodata": "/geodata/doctrineplugin",
             "Geo\\DataBundle": "/geodata/geodata-bundle"
         }
     },

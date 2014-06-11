@@ -18,7 +18,7 @@
         "php": ">=5.3.2",
         "symfony/framework-bundle": "~2.3",
         "symfony/form": "~2.3",
-		"tecnick.com/tcpdf": "dev-master"
+		"ensepar/tcpdf": "dev-master"
     },
     "autoload": {
         "psr-0": {

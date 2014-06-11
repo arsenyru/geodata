@@ -25,5 +25,5 @@
             "Geo\\DataBundle": "/geodata/geodata-bundle"
         }
     },
-    "target-dir": "geodata",
+    "target-dir": "geodata"
 }

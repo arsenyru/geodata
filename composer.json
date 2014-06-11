@@ -1,0 +1,29 @@
+{
+    "name": "arsenyru/geodata",
+    "type": "symfony-bundle",
+    "description": "for working with geographical data in Symfony 2",
+    "keywords": ["geographical data", "coordinates"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Arseny Tsepennikov",
+            "email": "arseny.ru@gmail.com"
+        },
+        {
+            "name": "Varvara Krayvanova as research supervisor"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": "~2.3",
+        "symfony/form": "~2.3"
+    },
+    "autoload": {
+        "psr-0": {
+            "Geodata": "/geodata/doctrineplugin"
+            "Geo\\DataBundle": "/geodata/geodata-bundle"
+        }
+    },
+    "target-dir": "geodata",
+}

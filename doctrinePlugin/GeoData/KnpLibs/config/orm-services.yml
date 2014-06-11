@@ -1,0 +1,8 @@
+parameters:
+    knp.doctrine_behaviors.reflection.class_analyzer.class: Geodata\KnpLibs\DoctrineBehaviors\Reflection\ClassAnalyzer
+    knp.doctrine_behaviors.reflection.is_recursive: true
+
+services:
+    knp.doctrine_behaviors.reflection.class_analyzer:
+        class:   "%knp.doctrine_behaviors.reflection.class_analyzer.class%"
+        public:  false

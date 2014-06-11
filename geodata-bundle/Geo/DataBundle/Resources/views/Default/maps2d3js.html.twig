@@ -1,0 +1,54 @@
+{% extends 'GeoDataBundle:Default:mybase.html.twig' %}
+{% block title %}Отображение точек на карте{% endblock %}
+{% block onload %} onload="d3jsGo()"{%endblock%}
+{%block myscript%}
+<style>
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+#viewPointInfo {
+  background-color: #99CCFF;
+  color: #000000;
+}
+
+#chart {
+	width: {{width}}px;
+	height: {{height}}px;
+	border: 3px solid black;
+}
+</style>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+function d3jsGo() {
+	{{script|raw}}
+	//var viewDiv = document.createElement("div");
+	//viewDiv.id = "viewPointInfo";
+	//viewDiv.style = "display:none";
+	//document.body.appendChild(viewDiv);
+}
+
+
+//function viewLabel(text) {
+//	var viewDiv = document.getElementById("viewPointInfo");
+//	alert(d3.mouse(this));
+//	viewDiv.innerHTML = text;
+//	viewDiv.style.display = "block";
+//}
+</script>
+{%endblock%}
+{% block body %}
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Визуализация D3JS</h3>
+  </div>
+  <div class="panel-body">
+	<div id="chart">
+  </div>
+  <a href="{{ path('geodata_maps2') }}">Назад к выбору точки</a><br>
+  <a href="{{ path('geodata_homepage') }}">На главную страничку демонстрационного приложения</a><br>
+</div>
+{% endblock %}

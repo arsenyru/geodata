@@ -1,0 +1,18 @@
+imports:
+    - { resource: ../KnpLibs/config/orm-services.yml }
+
+parameters:
+    geodata_listener.class: Geodata\ORM\GeoDataListener
+    knp.doctrine_behaviors.reflection.class_analyzer.class: Geodata\KnpLibs\DoctrineBehaviors\Reflection\ClassAnalyzer
+    knp.doctrine_behaviors.reflection.is_recursive: true
+
+services:
+    geodata_listener:
+        class:   "%geodata_listener.class%"
+        public:  false
+        arguments:
+            - "@knp.doctrine_behaviors.reflection.class_analyzer"
+            - "%knp.doctrine_behaviors.reflection.is_recursive%"
+            - "@?geodata_callable"
+        tags:
+            - { name: doctrine.event_subscriber }

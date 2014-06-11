@@ -1,0 +1,36 @@
+{% extends 'GeoDataBundle:Default:mybase.html.twig' %}
+{% block title %}Отображение точек на карте{% endblock %}
+{% block onload %} onload="{{func}}()"{%endblock%}
+{%block myscript%}
+{{googleScript|raw}}
+{%endblock%}
+{% block body %}
+<div class="navbar navbar-inverse">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">Отображение точек на карте</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-inverse-collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Google Maps</a></li>
+      <li><a href="{{ path('geodata_yamaps') }}">Яндекс.Карты</a></li>
+    </ul>
+	</div>
+</div>
+{% if (addClick) %}
+По клику на карте в базу данных первого формата будет добавлена точка<br>
+<span class="label label-success" id="response"></span>
+{% endif %}
+<div id="map_canvas"></div>
+<div class="panel panel-default">
+  <div class="panel-heading">Точки на карте</div>
+  <div class="panel-body">
+    {% for point in pts %}
+	{% if loop.index != 1 %}
+		| 
+	{% endif %}
+	<a href="#" onClick="map.setCenter(markers[{{loop.index}}].getPosition())">{{point.gettitle}}</a>
+	{% endfor %}
+  </div>
+</div>
+<a href="{{ path('geodata_homepage') }}">На главную страничку демонстрационного приложения</a><br>
+{% endblock %}
